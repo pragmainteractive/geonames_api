@@ -44,8 +44,6 @@ module GeoNamesAPI
 
     private_class_method :make_request
 
-    KEYS = %w(streetSegment geonames)
-
     def self.parse_response(response, request_params)
       GeoNamesAPI.logger.info "GEONAMES RESPONSE (#{Time.now}): #{response}" if GeoNamesAPI.logger
       if (status = response['status'])
