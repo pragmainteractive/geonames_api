@@ -39,7 +39,7 @@ module GeoNamesAPI
     end
 
     def self.make_request(uri)
-      JSON.load(open(uri).read)
+      JSON.load(open(uri, "User-Agent" => "#{GeoNamesAPI.name}/#{GeoNamesAPI::VERSION}").read)
     end
 
     private_class_method :make_request
